@@ -2,7 +2,7 @@
 
 ![image](https://github.com/CodeKaito/DevOps/assets/57111980/605fcd16-8881-412c-8ebc-4d0e3c23a51c)
 
-## Introduction..
+## Introduction...
 
 Welcome to the GitHub repository for DevOps methodology and procedures! This repository aims to provide comprehensive information and resources about DevOps, including its methodology, technologies, and best practices. Whether you're new to DevOps or an experienced practitioner, this README will serve as a guide to help you understand and implement DevOps in your projects effectively.
 
