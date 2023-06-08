@@ -1,17 +1,17 @@
-FROM golang:latest
+# Environment GO
+FROM golang:1.20
 
+# Creo una folder sotto AP
+RUN mkdir /app
+
+# Workingdir la sposto dentro app
 WORKDIR /app
 
-COPY ./src/go.mod .
+# Copio tutta la mia working directory dentro app
+COPY . /app
 
-RUN go mod download
+# Installa i pacchetti e mi connetto ad un redis client
+RUN go get github.com/go-redis/redis
 
-RUN go mod verify
-
-COPY ./src/main.go .
-
-RUN go get -d ./...
-
-RUN go build -o /bin/sh
-
-CMD ["/bin/sh"]
+# Lancio il command sul main.go
+CMD ["go","run","main.go"]
