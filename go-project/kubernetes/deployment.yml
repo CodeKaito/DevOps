@@ -1,0 +1,27 @@
+apiVersion: app/v1
+kind: Deployment
+metada:
+  name: web-deployment
+  labels:
+    app: web
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: web
+  template:
+    metadata:
+      labels:
+        app:
+    spec:
+      container:
+       - name: go-web-app
+         image: go-app-ms:latest
+         imagePullPolicy: IfNotPresent
+         ports:
+         - containerPort: 90
+         env: 
+          - name: REDIS_URL
+            value: 
+              redis-master: 6379
+
