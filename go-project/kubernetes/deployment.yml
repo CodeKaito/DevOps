@@ -1,6 +1,6 @@
-apiVersion: app/v1
+apiVersion: apps/v1
 kind: Deployment
-metada:
+metadata: 
   name: web-deployment
   labels:
     app: web
@@ -12,16 +12,16 @@ spec:
   template:
     metadata:
       labels:
-        app:
+        app: web
     spec:
-      container:
+      containers:
        - name: go-web-app
-         image: go-app-ms:latest
+         image: martucci/go-application-taglab:1.0.0
          imagePullPolicy: IfNotPresent
          ports:
-         - containerPort: 90
-         env: 
+         - containerPort: 9090
+         env:
           - name: REDIS_URL
-            value: 
-              redis-master: 6379
+            value: redis-master:6379
+              
 
